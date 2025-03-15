@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coba</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #1e3c72, #c23e3e, #0f1114);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background: linear-gradient(to right, #ff0000, #000000); 
+            position: relative;
+            z-index: 1;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 20px;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        .nav-link:hover {
+            transform: scale(1.2);
+            color: #ffd700 !important;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 0 10%;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .profile-container {
+            position: relative;
+            flex: 0 0 40%;
+            text-align: center; 
+        }
+
+        .profile-container img {
+            width: 320px;
+            border-radius: 50%;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            box-shadow: 0 0 20px transparent;
+        }
+
+        .profile-container:hover img {
+            transform: scale(1.1);
+            box-shadow: 0 0 50px rgb(151, 8, 212);
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .social-icons::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: white;
+        }
+
+        .social-icons a {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: white;
+            transition: 0.3s ease-in-out, color 0.3s ease-in-out;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.3);
+            color: #ff0000;
+        }
+
+        .section {
+            padding: 100px 10%;
+            text-align: center;
+        }
+
+        .card {
+            width: 18rem; 
+            margin: 20px auto; 
+            background-color: transparent; 
+            border: none;
+            transition: transform 0.4s ease-in-out; 
+        }
+
+        .card img {
+            width: 100%; 
+            height: auto; 
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, filter 0.4s ease-in-out;
+            box-shadow: 0 0 20px transparent;
+        }
+
+        .card:hover img {
+            transform: scale(1.1); 
+        }
+
+        .card:hover img:hover {
+            filter: hue-rotate(-20deg) saturate(1.5);
+        }
+
+        .carousel-item img {
+            max-width: 25%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .footer {
+            background-color: #000;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer .social-icons a {
+            margin: 0 10px;
+            font-size: rem;
+            color: white;
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .footer .social-icons a:hover {
+            transform: scale(1.3);
+            color: #ff0000;
+        }
+
+        .about-me ha{
+            font-family: 'spicy rice', sans-serif;
+        }
+
+        .about-me p {
+            font-family: 'spicy rice', sans-serif;
+        }
+
+        .section h1 {
+            margin-bottom: 40px; /
+        }
+
+        .custom-container {
+            margin-top: -50px; 
+        }
+
+
+        .custom-card {
+        background: linear-gradient(to right, #ff0000, #000000);
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        font-size: 0.75rem;
+        padding: 10px; 
+        }
+
+        .custom-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(205, 4, 255, 0.7);
+        }
+
+        .custom-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 5px;
+            font-size: 1rem; 
+        }
+
+        .custom-card p {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+        }
+            
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">Asnan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about-me">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#favorite-cars">Favorite Cars</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#favorite-music">favorite music</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about-me" class="hero">
+        <div class="profile-container">
+            <img src="image/profile.jpg" class="profile-img" alt="Profile">
+        </div>
+        <div>
+            <h1>  <span style="color:#000000;">About</span> <span style="color:#ffd700;">Me</span></h1>
+            <h2>Hai, saya <span style="color: #ff0000;">Asnan</span></h2>
+            <p>Saya mahasiswa Sistem Informasi di Fakultas Teknik, Universitas Mulawarman. Saya kuliah untuk menambah ilmu sekaligus mempersiapkan diri membangun bisnis sendiri.
+                Saya juga seorang pecinta otomotif, terutama mobil balap. Saya suka bermain game balap, terutama game balap mobil
+                dan game balap Formula 1. Saya juga suka menonton balapan Formula 1 dan MotoGP. Saya juga suka mengoleksi diecast mobil balap.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/asnann.09" target="_blank">
+                    <img src="image/instagram.png" alt="Instagram" style="width: 30px; height: 30px; margin-right: 15px;">
+                </a>
+                <a href="https://www.tiktok.com/@asnann__09" target="_blank">
+                    <img src="image/Tiktok.png" alt="TikTok" style="width: 30px; height: 30px; margin-right: 15px;">
+                </a>
+                <a href="https://github.com/Asnan09" target="_blank">
+                    <img src="image/github.png" alt="GitHub" style="width: 30px; height: 30px; margin-right: 15px;">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-4 mb-4">
+                <div class="custom-card p-4">
+                    <h3>Formula 1</h3>
+                    <p>Saya penggemar berat Formula 1, terutama tim Ferrari dan Red Bull Racing.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="custom-card p-4">
+                    <h3>Game Balap</h3>
+                    <p>Game favorit saya adalah F1 2023 dan Need for Speed. Saya suka tantangan balapnya.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="custom-card p-4">
+                    <h3>Koleksi Diecast</h3>
+                    <p>Saya memiliki koleksi diecast mobil balap dari berbagai merek terkenal.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="custom-card p-4">
+                    <h3>MotorGP</h3>
+                    <p>Saya juga mengikuti MotoGP, terutama mendukung pembalap seperti Marc Marquez.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="custom-card p-4">
+                    <h3>Teknologi</h3>
+                    <p>Saya suka belajar tentang teknologi terbaru, terutama dalam dunia pemrograman.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="custom-card p-4">
+                    <h3>Musik Favorit</h3>
+                    <p>Musik favorit saya tuh seperti the beatles, frank ocean, daniel caesar dan </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section id="favorite-cars" class="section">
+        <h1>Favorite Cars</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="image/ferarrif1.png" class="card-img-top" alt="Car 1">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="image/mercedesf1.png" class="card-img-top" alt="Car 2">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="image/astonmartisf1.png" class="card-img-top" alt="Car 3">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="image/redbullf1.png" class="card-img-top" alt="Car 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="favorite-music" class="section">
+        <h1>favorite music</h1>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1000">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="1000">
+                    <img src="image/musik 1.png" class="d-block w-100" alt="Game 1">
+                </div>
+                <div class="carousel-item" data-bs-interval="1000">
+                    <img src="image/musik 2.png" class="d-block w-100" alt="Game 2">
+                </div>
+                <div class="carousel-item" data-bs-interval="1000">
+                    <img src="image/musik 3.png" class="d-block w-100" alt="Game 3">
+                </div>
+                <div class="carousel-item" data-bs-interval="1000">
+                    <img src="image/musik 4.png" class="d-block w-100" alt="Game 4">
+                </div>
+                <div class="carousel-item" data-bs-interval="1000">
+                    <img src="image/musik 5.png" class="d-block w-100" alt="Game 5">
+                </div>
+                <div class="carousel-item" data-bs-interval="1000">
+                    <img src="image/musik 6.png" class="d-block w-100" alt="Game 6">
+                </div>
+                <div class="carousel-item" data-bs-interval="1000">
+                    <img src="image/musik 7.png" class="d-block w-100" alt="Game 7">
+                </div>
+                <div class="carousel-item" data-bs-interval="1000">
+                    <img src="image/musik 8.png" class="d-block w-100" alt="Game 8">
+                </div>
+                <div class="carousel-item" data-bs-interval="1000">
+                    <img src="image/musik 9.png" class="d-block w-100" alt="Game 9">
+                </div>
+                <div class="carousel-item" data-bs-interval="1000">
+                    <img src="image/musik 10.png" class="d-block w-100" alt="Game 10">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
